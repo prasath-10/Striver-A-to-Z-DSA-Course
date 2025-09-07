@@ -1,0 +1,15 @@
+// in c
+void moveZeroes(int* nums, int numsSize) {
+    int ptr1 = 0, ptr2 = 0;
+
+    while(ptr1 < numsSize){
+        if(nums[ptr1] != 0){
+            int temp = nums[ptr1];
+            nums[ptr1] = nums[ptr2];
+            nums[ptr2] = temp;
+            ptr1++;
+            ptr2++;
+        }
+        else ptr1++;
+    }
+}
