@@ -1,0 +1,24 @@
+/*
+class Node{
+    int data;
+    Node next;
+    Node(int a){  data = a; next = null; }
+}*/
+
+class Solution {
+    public static int lengthofll(Node head){
+        Node temp=head;
+        int c=0;
+        while(temp!=null)
+        {
+             temp=temp.next;
+             c++;
+        }
+        return c;
+    }
+    
+    public int getCount(Node head) {
+        return lengthofll(head);
+        
+    }
+}
