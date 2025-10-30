@@ -1,0 +1,40 @@
+/*
+class Node {
+    int data;
+    Node next;
+
+    Node(int x) {
+        data = x;
+        next = null;
+    }
+}
+*/
+
+class Solution {
+    private static int findlength(Node slow,Node fast){
+        int c=1;
+        fast=fast.next;
+        while(slow!=fast)
+        {
+            c++;
+            fast=fast.next;
+        }
+        return c;
+    }
+    public int lengthOfLoop(Node head) {
+        Node slow=head;
+        Node fast=head;
+        int c=1;
+        while(fast!=null && fast.next!=null)
+        {
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow==fast)
+            {
+                return findlength(slow,fast);
+            }
+        }
+        return 0;
+        
+    }
+}
